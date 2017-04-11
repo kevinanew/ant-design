@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import shallowEqual from 'shallowequal';
 import Radio from './radio';
+import { CheckboxOptionType } from '../checkbox/Group';
 
 function getCheckedValue(children) {
   let value = null;
@@ -31,11 +32,7 @@ export interface RadioGroupProps {
   onMouseEnter?: React.FormEventHandler<any>;
   onMouseLeave?: React.FormEventHandler<any>;
   /** 以配置的方式设置 Radio 子元素，设置了此参数，会忽略 children */
-  options?: Array<string | {
-    label: string;
-    value: string;
-    disabled?: boolean;
-  }>;
+  options?: Array<string | CheckboxOptionType>;
 }
 
 export default class RadioGroup extends React.Component<RadioGroupProps, any> {
